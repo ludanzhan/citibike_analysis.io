@@ -1,4 +1,4 @@
-d3.csv("data/citibike_daily.csv").then(function(timeData){
+d3.csv("data /citibike_daily.csv").then(function(timeData){
     const rows = timeData;
         function unpack(rows, key) {
             return rows.map(function(row) { return row[key]; });
@@ -103,7 +103,7 @@ d3.csv("data/citibike_daily.csv").then(function(timeData){
         
 });
 
-d3.csv("data/citibike user/gender.csv").then(function(genderData){
+d3.csv("data /citibike user/gender.csv").then(function(genderData){
     const rows = genderData;
         function unpack(rows, key) {
             return rows.map(function(row) { return row[key]; });
@@ -147,7 +147,7 @@ d3.csv("data/citibike user/gender.csv").then(function(genderData){
         
 });
 
-d3.csv("data/age distribute.csv").then(function(ageData){
+d3.csv("data /age distribute.csv").then(function(ageData){
     const rows = ageData;
         function unpack(rows, key) {
             return rows.map(function(row) { return row[key]; });
@@ -187,12 +187,12 @@ d3.csv("data/age distribute.csv").then(function(ageData){
 });
 
 Promise.all([
-    d3.csv("data/hourly usage/Hourly usage(2014).csv"),
-    d3.csv("data/hourly usage/Hourly usage(2015).csv"),
-    d3.csv("data/hourly usage/Hourly usage(2016).csv"),
-    d3.csv("data/hourly usage/Hourly usage(2017).csv"),
-    d3.csv("data/hourly usage/Hourly usage(2018).csv"),
-    d3.csv("data/hourly usage/Hourly usage(2019).csv"),
+    d3.csv("data /hourly usage/Hourly usage(2014).csv"),
+    d3.csv("data /hourly usage/Hourly usage(2015).csv"),
+    d3.csv("data /hourly usage/Hourly usage(2016).csv"),
+    d3.csv("data /hourly usage/Hourly usage(2017).csv"),
+    d3.csv("data /hourly usage/Hourly usage(2018).csv"),
+    d3.csv("data /hourly usage/Hourly usage(2019).csv"),
 ]).then(function(files){
     const rows = files;
     function unpack(rows, key) {
@@ -319,3 +319,17 @@ Promise.all([
         
     Plotly.newPlot('hourlySeries', traceData, layout);
 })
+
+d3.csv('data /Station.csv').then(function(stationData){
+    const rows = stationData;
+    function unpack(rows, key) {
+
+        return rows.map(function(row) { return row[key]; });
+
+    }
+
+
+})
+
+   
+

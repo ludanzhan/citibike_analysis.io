@@ -7,6 +7,25 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Citibke Analysis</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+    crossorigin="" />
+
+  <!-- Leaflet JavaScript code -->
+  <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+    integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+    crossorigin=""></script>
+
+  
+  <!-- D3 Library -->
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+
+  <!-- Plotly-->
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
 </head>
 
 <body>
@@ -35,23 +54,27 @@
           <div id = "hourlySeries"></div>
         </div>
 
+        <div class="col-md-12">
+          <div id = "map"></div>
+        </div>
+
       </div>
     </div>
 
   </div>
 
-  <script src="https://d3js.org/d3.v5.min.js"></script>
-  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
   <script src="app.js"></script>
-  <script src="data/citibike_daily.csv"></script>
-  <script src="data/citibike user/gender.csv"></script>
-  <script src="data/age distribute.csv"></script>
-  <script src="data/hourly usage/Hourly usage(2014).csv"></script>
-  <script src="data/hourly usage/Hourly usage(2015).csv"></script>
-  <script src="data/hourly usage/Hourly usage(2016).csv"></script>
-  <script src="data/hourly usage/Hourly usage(2017).csv"></script>
-  <script src="data/hourly usage/Hourly usage(2018).csv"></script>
-  <script src="data/hourly usage/Hourly usage(2019).csv"></script>
+  <script src="data /citibike_daily.csv"></script>
+  <script src="data /citibike user/gender.csv"></script>
+  <script src="data /age distribute.csv"></script>
+  <script src="data /hourly usage/Hourly usage(2014).csv"></script>
+  <script src="data /hourly usage/Hourly usage(2015).csv"></script>
+  <script src="data /hourly usage//Hourly usage(2016).csv"></script>
+  <script src="data /hourly usage//Hourly usage(2017).csv"></script>
+  <script src="data /hourly usage//Hourly usage(2018).csv"></script>
+  <script src="data /hourly usage//Hourly usage(2019).csv"></script>
+  <script src="data /Station.csv"></script>
+
 
 </body>
 
