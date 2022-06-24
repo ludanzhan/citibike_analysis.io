@@ -20,7 +20,12 @@
   crossorigin=""></script>
 
   <!-- D3 Library -->
-  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="https://d3js.org/d3.v6.js"></script>
+
+  <!-- Load d3.js -->
+  
+  <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+  <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
 
   <!-- Plotly-->
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
@@ -53,13 +58,41 @@
           <div id = "hourlySeries"></div>
         </div>
 
+        <!-- Create an element where the map will take place -->
         <div class="col-md-12">
-          <div id = "map"></div>
+          <svg id="my_dataviz" width="1000" height="500"></svg>
         </div>
-
-
-        <div id="map">
-        </div>
+        
+        
+        <script>
+          const svg = d3.select("svg"),
+          width = +svg.attr("width"),
+          height = +svg.attr("height");
+    
+         // Map and projection
+          const projection = d3.geoMercator()
+              .center([-96, 40])                // GPS of location to zoom on
+              .scale(700)                       // This is like the zoom
+              .translate([ width, height ])
+    
+          // Load external data and boot
+          d3.json("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson").then( function(data){
+             console.log(data.features)
+              // Filter data
+              data.features = data.features.filter(d => {console.log(d.properties.name); return d.properties.name=="USA"})
+              
+              // Draw the map
+              svg.append("g")
+                  .selectAll("path")
+                  .data(data.features)
+                  .join("path")
+                    .attr("fill", "#b8b8b8")
+                    .attr("d", d3.geoPath()
+                        .projection(projection)
+                    )
+                  .style("stroke", "#fff")
+          })
+    </script>
       
       </div>
     </div>
@@ -79,10 +112,7 @@
   <script src="data /hourly usage//Hourly usage(2018).csv"></script>
   <script src="data /hourly usage//Hourly usage(2019).csv"></script>
   <script src="data /Station.csv"></script>
-
-
-  <!-- JavaScript file -->
-  <script type="text/javascript" src="map.js"></script>
+  <script src="https://raw.githubusercontent.com/codeforgermany/click_that_hood/main/public/data/new-york-counties.geojson"></script>
 
 </body>
 
