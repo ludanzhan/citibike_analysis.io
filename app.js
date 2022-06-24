@@ -327,8 +327,6 @@ d3.csv('data /Station.csv').then(function(stationData){
         return rows.map(function(row) { return row[key]; });
 
     }
-
-
 })
 
    
