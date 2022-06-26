@@ -54,9 +54,13 @@
         <div>
           <svg id="my_dataviz" ></svg>
           <script>
-            const svg = d3.select("svg"),
-            width =  window.innerWidth,
-            height = window.innerHeight;
+            const width = window.innerWidth,
+		              height = window.innerHeight;
+            const svg = d3.select("svg")
+                        .attr("width",width)
+                        .attr("height",height);
+
+            console.log(height)
 
            // Map and projection
             const projection = d3.geoMercator()
@@ -67,14 +71,14 @@
             const path = d3.geoPath().projection(projection);
       
             // Load external data and boot
-            d3.json("data/NYC_Boroughs.geojson").then( function(geodata){
+            d3.json("data /NYC_Boroughs.geojson").then(function(geodata){
                const data = geodata
                console.log(data.features)
                 // Filter data
                 
                 // Draw the map
                 svg.append("g")
-                    .selectAll("path")
+                    .selectAll("path.boroughs")
                     .data(data.features)
                     .join("path")
                       .attr("fill", "#b8b8b8")
@@ -82,8 +86,9 @@
                           .projection(projection)
                       )
                     .style("stroke", "#fff")
-   
-            })
+              })
+
+              
           </script>  
         </div>
 
