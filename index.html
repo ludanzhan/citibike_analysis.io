@@ -51,74 +51,12 @@
           <div id = "hourlySeries"></div>
         </div>
 
-        <div>
-          <svg id="my_dataviz" ></svg>
-          <script>
-            const width = window.innerWidth,
-		              height = window.innerHeight;
-            const svg = d3.select("svg")
-                        .attr("width",width)
-                        .attr("height",height);
-
-            console.log(height)
-
-           // Map and projection
-            const projection = d3.geoMercator()
-                .center([-74.25,40.69])                // GPS of location to zoom on
-                .scale(70000)                       // This is like the zoom
-                .translate([ width/4, height/2 ])
-  
-            const path = d3.geoPath().projection(projection);
-      
-            // Load external data and boot
-            Promise.all([
-            d3.json("data /NYC_Boroughs.geojson"),
-            d3.csv("data /Station.csv")
-            ])
-            .then(function(geodata){
-               const data = geodata[0]
-               const station = geodata[1]
-                
-                 // Create a color scale
-                const color = d3.scaleOrdinal()
-                  .domain(station.map(d => d.Name))
-
-                 // Add a scale for bubble size
-                const valueExtent = d3.extent(station, d => +d.trips)
-                const size = d3.scaleSqrt()
-                  .domain(valueExtent)  // What's in the data
-                  .range([ 1, 50])
-                
-                console.log(valueExtent)
-
-                // Draw the map
-                svg.append("g")
-                    .selectAll("path.boroughs")
-                    .data(data.features)
-                    .join("path")
-                      .attr("fill", "#b8b8b8")
-                      .attr("d", d3.geoPath()
-                          .projection(projection)
-                      )
-                    .style("stroke", "#fff")
-                    .style("opacity", .3)
-
-                    svg
-                      .selectAll("myCircles")
-                      .data(station.sort((a,b) => +b.trips - +a.trips).filter((d,i) => i<50000))
-                      .join("circle")
-                        .attr("cx", d => projection([+d.Longitude, +d.Latitude])[0])
-                        .attr("cy", d => projection([+d.Longitude, +d.Latitude])[1])
-                        .attr("r", d => size(+d.trips))
-                        .style("fill", d => color(d.Name))
-                        .attr("stroke", d=> {if (d.trips>20000) {return "blue"} else {return "none"}  })
-                        .attr("stroke-width", 1)
-                        .attr("fill-opacity", .5)
-                console.log(station)
-             })
-
-              
-          </script>  
+        <div class="col-md-12">
+          <div class="col-md-6">
+            <svg id="my_dataviz" ></svg>
+            <script src='map.js' type='text/javascript'></script>>
+          </div>
+          
         </div>
 
         <!-- Create an element where the map will take place --> 
