@@ -1,7 +1,7 @@
 
 
-const width = 600,
-      height = 600;
+const width  = 550,
+      height = 550;
 const svg = d3.select("svg")
             .attr("width",width)
             .attr("height",height);
@@ -9,7 +9,7 @@ const svg = d3.select("svg")
 // Map and projection
 const projection = d3.geoMercator()
     .center([-74.25,40.69])                // GPS of location to zoom on
-    .scale(47000)                       // This is like the zoom
+    .scale(45000)                       // This is like the zoom
     .translate([ width/4, height/2 ])
 
 const path = d3.geoPath().projection(projection);
@@ -48,7 +48,8 @@ Promise.all([
                     .style("stroke", "#fff")
                     .style("opacity", 1);  
 
-         
+    
+     
     // add bubbles 
     svg.selectAll("myCircles")
         .data(station.sort((a,b) => +b.trips - +a.trips).filter((d,i) => i<50000))
@@ -61,45 +62,45 @@ Promise.all([
         .attr("fill-opacity", .7)
 
     // add boroughs name
-    svg
+   svg
         .append("text")
           .attr("text-anchor", "end")
           .style("fill", "white")
-          .attr("x", width-310 )
-          .attr("y", height -200)
+          .attr("x", width-280 )
+          .attr("y", height -180)
           .attr("width", 90)
           .html("Staten Island")
-          .style("font-size", 15);
+          .style("font-size", 14);
 
     svg
         .append("text")
         .attr("text-anchor", "end")
         .style("fill", "white")
-        .attr("x", width-180)
+        .attr("x", width-140)
         .attr("y", height -240)
         .attr("width", 90)
         .html("Brooklyn")
-        .style("font-size", 15);
+        .style("font-size", 14);
     
     svg
         .append("text")
             .attr("text-anchor", "end")
             .style("fill", "white")
-            .attr("x", width-70)
-            .attr("y", height -340)
+            .attr("x", width-50)
+            .attr("y", height -310)
             .attr("width", 90)
             .html("Queens")
-            .style("font-size", 15);
+            .style("font-size", 14);
     
     svg
         .append("text")
             .attr("text-anchor", "end")
             .style("fill", "white")
-            .attr("x", width-110)
-            .attr("y", height -480)
+            .attr("x", width-90)
+            .attr("y", height -460)
             .attr("width", 90)
             .html("Bronx")
-            .style("font-size", 15);
+            .style("font-size", 14);
 
     svg
         .append("text")
@@ -107,10 +108,10 @@ Promise.all([
             .style("fill", "white")
             .attr("x", width)
             .attr("y", height -480)
-            .attr("transform", "rotate(300 570 360)")
+            .attr("transform", "rotate(300 560 310)")
             .attr("width", 90)
             .html("Manhattan")
-            .style("font-size", 15)
+            .style("font-size", 14)
     
     
 })

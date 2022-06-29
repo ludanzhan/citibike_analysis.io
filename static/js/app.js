@@ -320,14 +320,30 @@ Promise.all([
     Plotly.newPlot('hourlySeries', traceData, layout);
 })
 
-d3.csv('data /Station.csv').then(function(stationData){
-    const rows = stationData;
-    function unpack(rows, key) {
-
-        return rows.map(function(row) { return row[key]; });
-
-    }
-})
-
+d3.csv("data /top100.csv").then(function(stationData){
+    const rows = stationData.slice(0,10);
+        function unpack(rows, key) {
+            return rows.map(function(row) { return row[key]; });
+        }
+    
+        let trace1 = {
+            type: "bar",
    
+            x: unpack(rows, 'trips'),
+            y: unpack(rows, 'Name'),
+            marker:{color: '#213272'},
+            orientation: 'h'
+            
+        }
 
+        let layout = {
+            width: 600,
+            xaxis:{title:"Total Trips Count"},
+            yaxis:{title:"Station Name"}
+          };
+    
+        let traceData = [trace1, ];
+        
+         Plotly.newPlot('stationBar', traceData, layout);
+        
+});
