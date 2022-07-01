@@ -312,7 +312,8 @@ Promise.all([
               }
         ],
           
-        height: 550
+        height: 550,
+        
     }
 
     let traceData = [trace1,trace2, trace3,trace4,trace5, trace6];
@@ -325,21 +326,25 @@ d3.csv("data /top100.csv").then(function(stationData){
         function unpack(rows, key) {
             return rows.map(function(row) { return row[key]; });
         }
+
+        const yaxis = unpack(rows,' Name').reverse()
+        const trip = unpack(rows, 'trips').reverse()
     
         let trace1 = {
             type: "bar",
-   
-            x: unpack(rows, 'trips'),
-            y: unpack(rows, 'Name'),
+            x: trip,
+            y: [1,2,3,4,5,6,7,8,9,10],
+            textposition: 'auto',
+            hoverinfo: 'none',
             marker:{color: '#213272'},
-            orientation: 'h'
+            orientation: 'h',
+            text:yaxis.map(String)
             
         }
 
         let layout = {
-            width: 600,
             xaxis:{title:"Total Trips Count"},
-            yaxis:{title:"Station Name"}
+            showlegend:false
           };
     
         let traceData = [trace1, ];
