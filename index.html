@@ -5,62 +5,65 @@
         <title>Citibike Analysis</title>
 
         <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.css" integrity="sha512-TD/aL30dNLN0VaHVoh9voFlNi7ZuWQYtV4bkIJv2ulZ8mEEkZJ7IyGvDthMKvIUwzLmPONnjQlAi55HTERVXpw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         <link rel="stylesheet" href="style.css">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>	
     </head>
 
-    <body>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container-fluid">
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-                  </li>
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Dashboard
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <li><a class="dropdown-item" href="Dashboard.html">Time Series Analysis</a></li>
-                      <li><a class="dropdown-item" href="#">User Demographic Analysis</a></li>
-                      <li><a class="dropdown-item" href="#">Station Analysis</a></li>
-                    </ul>
-                  </li>
-                </ul>
+    <body>   
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.js" integrity="sha512-gSf3NCgs6wWEdztl1e6vUqtRP884ONnCNzCpomdoQ0xXsk06lrxJsR7jX5yM/qAGkPGsps+4bLV5IEjhOZX+gg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <div id="fullPage">
+          <div class="section">
+            <div class="slide">
+              <div class="container">
+                <div class="row justify-content-start">
+                  <div class="col-md-12">
+                    <h1>Citibike Analysis</h1>
+                  </div>
+                </div>
+                <div class="row justify-content-evenly">
+                  <div class="col-md-12">
+                    <img class="rounded float-start" src="https://www.welovedaily.com/media/pages/resources/35-outstanding-bicycle-illustrations/1056275260-1631837774/image_processing20191112-20048-nh6n33.jpg"  width="62%" >
+           
+                    <h5>Background</h5>
+                    <p style="text-align: justify;"> 
+                      As one of the popular commute tools, the bike is especially well-known for its effects on environmentally friendly, daily exercise, and money savings.
+                      With the emerging public bicycle sharing system, Citi Bike has expanded the usage and popularity of bike riding. 
+                      Over the past eight years, Citi Bike has successfully grown average ridership numbers to above 100,000.
+                    </p>
+                    <hr>
+                    <h5>Project Objective</h5>
+                    <p style="text-align: justify;">
+                      This project aims to provide a deep insight into the Citi Bike history including the user demographic distribution (age, gender, and user type), 
+                      time-series analysis (overall bike usage growth and the influence of covid), and the station's geographic distribution. 
+                      All data used in this project can be found in the  <a href="https://ride.citibikenyc.com/system-data">Citi Bike public data site </a> 
+                    </p>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+
+          <div class="section">
+            <div class="slide">
+              <div class="container">
+                <img src="https://img.freepik.com/free-vector/business-intelligence-dashboard-abstract-concept-illustration_335657-4882.jpg?t=st=1657006865~exp=1657007465~hmac=c5f1749a97c19572041cc0e6ea04a994a95bffc6d9d20567aa5b89a6a3dd9fa8&w=996" width="60%">
               </div>
             </div>
-        </nav>
-
-        <div class="container">
-            <div class="row justify-content-between">
-                <div class="col-md-12 jumbotron text-center" >
-                    <h1 style="font-size: 1.5cm;">Citibike Analysis</h1>
-                </div>
-                <div class="col-md-12">
-                  <h5>Background</h5>
-                  <p style="text-align: justify;"> 
-                    Citi Bike is a public bicycle sharing system serving the New York City boroughs. A public bicycle sharing system  is a shared transport service in which bicycles are made available for shared use to individuals on a short-term basis for a price or free.
-                    Citi Bike was first proposed in 2008 by the New York City Department of Transportation and was officially opened in May 2013 with 332 stations and 6,000 bikes. Through the past eight years, Citi Bike has scuccefuly expend its average ridership numbers to above 100,000.
-                  </p>
-
-                  <h5>Project Objective</h5>
-                  <p>
-                    This project provides a insight into the Citi Bike past user growth history and also how the user growth effected under the current pandemic situation. 
-                    Data for this for this project coudl be find in the Citi Bike open <a href="https://ride.citibikenyc.com/system-data">data source website.</a>
-                  </p>
-                  <img  src="https://cdn.myportfolio.com/69938203a0208495cf4eabbe35d01468/4455b0251aaa0e7cfdba26de_rw_1920.jpg?h=3b087048bdcba439ca988b9a482509c3" alt="alt-text" width="1000" style="position: absolute; left: 10%;">
-                </div>
-            </div>
+          </div>
         </div>
 
-        <div class="container">
-
-        </div>
-        
-          
-          
-    </body>
-      
+        <script>
+          new fullpage('#fullPage', {
+              //options here
+              autoScrolling:true,
+              navigation: true,
+              controlArrows: false,
+              slidesNavigation: true
+          });
+        </script>
+     </body>  
 </html>
