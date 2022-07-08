@@ -114,7 +114,7 @@ d3.csv("data /citibike user/gender.csv").then(function(genderData){
             name: 'Male',
             x: unpack(rows, 'Year'),
             y: unpack(rows, 'Male'),
-            marker:{color: '#213272'}
+            marker:{color: '#214991'}
             
         }
 
@@ -123,7 +123,7 @@ d3.csv("data /citibike user/gender.csv").then(function(genderData){
             name: 'Female',
             x: unpack(rows, 'Year'),
             y: unpack(rows, 'Female'),
-            marker:{color: '#4c5c8c'}
+            marker:{color: '#e17e8a'}
         }
 
         let trace3 = {
@@ -131,14 +131,16 @@ d3.csv("data /citibike user/gender.csv").then(function(genderData){
             name: 'Unknown',
             x: unpack(rows, 'Year'),
             y: unpack(rows, 'unknown'),
-            marker:{color: '#9c080e'}
+            marker:{color: '#e4926d'}
         }
     
         let layout = {
             barmode: 'group',
-            width: 600,
+            width: 500,
+
             xaxis:{title:"Year"},
-            yaxis:{title:" Gender Count"}
+            yaxis:{title:" Gender Count"},
+            legend:{orientation: 'h', x: 0.3, y: 1}
           };
     
         let traceData = [trace1, trace2, trace3];
@@ -158,7 +160,7 @@ d3.csv("data /age distribute.csv").then(function(ageData){
             name: 'Male',
             x: unpack(rows, 'Male'),
             y: unpack(rows, 'Age'),
-            marker:{color: '#213272'},
+            marker:{color: '#214991'},
             orientation: 'h'
             
         }
@@ -168,16 +170,17 @@ d3.csv("data /age distribute.csv").then(function(ageData){
             name: 'Female',
             x: unpack(rows, 'Female'),
             y: unpack(rows, 'Age'),
-            marker:{color: '#9c080e'},
+            marker:{color: '#e17e8a'},
             orientation: 'h',
         }
 
     
         let layout = {
             barmode: 'stack',
-            width: 600,
+            width: 500,
             xaxis:{title:"Customer Count"},
-            yaxis:{title:"Age Range"}
+            yaxis:{title:"Age Range"},
+            legend:{orientation: 'h', x: 0.5, y: 1}
           };
     
         let traceData = [trace1, trace2];
@@ -347,8 +350,38 @@ d3.csv("data /top100.csv").then(function(stationData){
             showlegend:false
           };
     
-        let traceData = [trace1, ];
+        let traceData = [trace1 ];
         
          Plotly.newPlot('stationBar', traceData, layout);
         
 });
+
+d3.csv("data /userType.csv").then(function(userData){
+    const rows = userData
+        function unpack(rows, key) {
+            return rows.map(function(row) { return row[key]; });
+        }
+
+    let userCount = unpack(rows, 'count')
+    let pieTrace = [{
+        type:"pie",
+        values:userCount,
+        labels:['Not member', 'Member'],
+        textinfo: "label+percent",
+        textposition: "outside",
+        automargin: true,
+        marker:{colors:['#e17e8a','#214991']}
+
+    }]
+
+    let layout ={
+        width:350,
+        showlegend:false,
+        margin: {"t": 0, "b": 0, "l": 0, "r": 0}
+    }
+
+    
+
+    Plotly.newPlot('pie', pieTrace, layout)
+    console.log(userCount)
+})
