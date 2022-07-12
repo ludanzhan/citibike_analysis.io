@@ -9,19 +9,18 @@ d3.csv("data /citibike_daily.csv").then(function(timeData){
             mode: "lines",
             x: unpack(rows, 'Start Time'),
             y: unpack(rows, 'Number of Trips'),
-            line: {color: '#213272'}
+            line: {color: '#214991'}
         }
 
   
     
         let layout = {
+            
+            title:'Daily Total Trip Count (2014-2022)',
             showlegend: false,
-            title: 'Citibike Bike Usage (2014-2019)',
-          
             xaxis: {
               range: ['2014-01-01', '2021-12-31'],     
               type: 'date',
-              title: 'Start Time'
             },
 
             yaxis:{
@@ -36,7 +35,7 @@ d3.csv("data /citibike_daily.csv").then(function(timeData){
                   x1: '2020-09-10',           
                   y1: 100000,            
                   line: {
-                      color: '#91ccf1',
+                      color: '#e4926d',
                       width: 4,
                       dash: 'dashdot' }
                 },
@@ -47,7 +46,7 @@ d3.csv("data /citibike_daily.csv").then(function(timeData){
                     x1: '2019-08-27',              
                     y1: 97000,              
                     line: {             
-                      color: '91ccf1',
+                      color: '#e4926d',
                       width: 4,            
                       dash:  'dashdot' 
                     }
@@ -60,7 +59,7 @@ d3.csv("data /citibike_daily.csv").then(function(timeData){
                     x1: '2021-09-10',              
                     y1: 130000,              
                     line: {             
-                      color: '91ccf1',
+                      color: '#e4926d',
                       width: 4,            
                       dash:  'dashdot' 
                     }
@@ -75,7 +74,7 @@ d3.csv("data /citibike_daily.csv").then(function(timeData){
                     x1: '2021-01-12',             
                     y1: 100000,             
                     line: {             
-                      color: '#b51017'             
+                      color: '#e17e8a'             
                     }
               
                   },
@@ -93,8 +92,8 @@ d3.csv("data /citibike_daily.csv").then(function(timeData){
                     ay:-40
                 }
             ],
-            height: 550
-          
+            height: 500,
+            width:740    
           };
     
         let traceData = [trace];
@@ -140,7 +139,7 @@ d3.csv("data /citibike user/gender.csv").then(function(genderData){
 
             xaxis:{title:"Year"},
             yaxis:{title:" Gender Count"},
-            legend:{orientation: 'h', x: 0.3, y: 1}
+            legend:{orientation: 'h', x: 0, y: 1}
           };
     
         let traceData = [trace1, trace2, trace3];
@@ -180,7 +179,7 @@ d3.csv("data /age distribute.csv").then(function(ageData){
             width: 500,
             xaxis:{title:"Customer Count"},
             yaxis:{title:"Age Range"},
-            legend:{orientation: 'h', x: 0.5, y: 1}
+            legend:{orientation: 'h', x: 0, y: 1}
           };
     
         let traceData = [trace1, trace2];
@@ -293,7 +292,7 @@ Promise.all([
               y: 10000,       
               xref: 'x',       
               yref: 'y',        
-              text: 'Morning pick hour at 8 am',       
+              text: 'Morning peak hour at 8 am',       
               showarrow: false,        
               align: 'center',
               bordercolor: 'black',       
@@ -306,7 +305,7 @@ Promise.all([
                 y: 10000,       
                 xref: 'x',       
                 yref: 'y',        
-                text: 'Afternoon pick hour at 5 pm',       
+                text: 'Afternoon peak hour at 5 pm',       
                 showarrow: false,        
                 align: 'center',
                 bordercolor: 'black',       
@@ -314,9 +313,11 @@ Promise.all([
                 borderpad: 4,       
               }
         ],
-          
-        height: 550,
         
+        height: 500,
+        width:740,
+        legend:{orientation: 'v', x: 0, y: 1}
+    
     }
 
     let traceData = [trace1,trace2, trace3,trace4,trace5, trace6];

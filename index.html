@@ -76,7 +76,15 @@
           <div class="section">
             <div class="slide">
               <div class="container">
-                <h1 style="text-align: center;">User Demographic Information</h1>
+                <div class="row">
+                  <div class="col-md-12 jumbotron text-center" style="background-color:white">
+                    <h1 style="font-size: 90px;">User Demographic Information</h1>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="slide">
+              <div class="container">
                 <div class="row justify-content-justify">
                   <div class="col-md-4">
                     <div id = 'ageBar' ></div>
@@ -87,6 +95,10 @@
 
                   <div class="col-md-4">
                     <div id = "pie"></div>
+                    <p style="font-size: 17px; text-align: justify;">
+                      As shown in the pie chart, over 70%  of the users have paid membership plan with the 
+                      Citi Bike
+                    </p>
                   </div>
 
                   <div class="col-md-4">
@@ -100,11 +112,43 @@
 
 
               </div>
+            </div>           
+          </div>
+
+          <div class="section">
+            <div class="slide">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-12 jumbotron text-center" style="background-color:white">
+                    <h1 style="font-size: 90px;">Time Series Analysis</h1>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="slide">
+              <div class="container">
+                <div class="row justify-content-start">
+                  
+                    <div class="col-md-6">
+                      <div id = "timeSeries">  </div>                         
+                      <p style="text-align: justify;">
+                        This time series chart displays the daily sums of trips from the year 2014 to 2022. The overall bike usage steadily increases over the year. 
+                        We also observe the impact of Covid on bike usage, the Covid started in early 2020 and was followed by a city-wide lockdown period which displays in the graph that bike usage didn't grow as expected.
+                      </p>                      
+                    </div>
+
+                    <div class="col-md-6">
+                      <div id = 'hourlySeries'></div>
+                      <p style="text-align: justify;">This graph calculates the average number of hourly trips for every hour during the day for the whole year. 
+                        We observe two pick hours during the day and the afternoon at 8 am and 5 pm. 
+                        This trend makes sense because those two peak hours are the regular working and off-working schedules for the majority of people.
+                      </p>
+                    </div>
+                
+                </div>
+              </div>
             </div>
 
-            <div>
-
-            </div>
           </div>
         </div>
 
