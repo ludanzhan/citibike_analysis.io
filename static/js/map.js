@@ -57,7 +57,7 @@ Promise.all([
         .attr("cx", d => projection([+d.Longitude, +d.Latitude])[0])
         .attr("cy", d => projection([+d.Longitude, +d.Latitude])[1])
         .attr("r", d => size(+d.trips))
-        .style("fill", '#9c0c11')
+        .style("fill", '#e17e8a')
         .attr("stroke-width", 1)
         .attr("fill-opacity", .7)
 

@@ -348,7 +348,9 @@ d3.csv("data /top100.csv").then(function(stationData){
 
         let layout = {
             xaxis:{title:"Total Trips Count"},
-            showlegend:false
+            showlegend:false,
+            height:550,
+            width:750
           };
     
         let traceData = [trace1 ];
