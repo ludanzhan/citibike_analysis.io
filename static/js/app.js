@@ -15,8 +15,6 @@ d3.csv("data /citibike_daily.csv").then(function(timeData){
   
     
         let layout = {
-            
-            title:'Daily Total Trip Count (2014-2022)',
             showlegend: false,
             xaxis: {
               range: ['2014-01-01', '2021-12-31'],     
@@ -92,7 +90,7 @@ d3.csv("data /citibike_daily.csv").then(function(timeData){
                     ay:-40
                 }
             ],
-            height: 500,
+            height: 430,
             width:740    
           };
     
@@ -257,7 +255,7 @@ Promise.all([
     }
 
     let layout = {
-        title:'Bike Hourly Average Usage',
+
         yaxis:{title:"Hourly Trip Count"},
         shapes:[
             {
@@ -314,7 +312,7 @@ Promise.all([
               }
         ],
         
-        height: 500,
+        height: 430,
         width:740,
         legend:{orientation: 'v', x: 0, y: 1}
     
@@ -347,6 +345,7 @@ d3.csv("data /top100.csv").then(function(stationData){
         }
 
         let layout = {
+            title:'Top10 Busiest Start Station',
             xaxis:{title:"Total Trips Count"},
             showlegend:false,
             height:550,

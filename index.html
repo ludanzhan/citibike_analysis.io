@@ -116,22 +116,29 @@
                     <div class="col-md-12 jumbotron text-center" style="background-color:white">
                       <h1 style="font-size: 50px;">Time Series Analysis</h1>
                     </div>
-                  </div>               
-                    <div class="col-md-6">
-                      <div id = "timeSeries">  </div>                         
-                      <p style="text-align: justify;">
-                        This time series chart displays the daily sums of trips from the year 2014 to 2022. The overall bike usage steadily increases over the year. 
-                        We also observe the impact of Covid on bike usage, the Covid started in early 2020 and was followed by a city-wide lockdown period which displays in the graph that bike usage didn't grow as expected.
-                      </p>                      
-                    </div>
-                    <div class="col-md-6">
-                      <div id = 'hourlySeries'></div>
+                  </div>
+                </div>   
+                
+                <div class ="row justify-content-around">
+                  <div class ="col-md-6 col-sm-6" id = "timeSeries">
+                    <div style="margin-top: 2.5cm;">
                       <p style="text-align: justify;">This graph calculates the average number of hourly trips for every hour during the day for the whole year. 
                         We observe two pick hours during the day and the afternoon at 8 am and 5 pm. 
                         This trend makes sense because those two peak hours are the regular working and off-working schedules for the majority of people.
                       </p>
                     </div>
+                  </div>
+                  <div class ="col-md-6 col-sm-6" >
+                    <div  style="margin-left: 3cm; margin-top: 4cm;" >
+                      <p style="text-align: justify;">
+                        This time series chart displays the daily sums of trips from the year 2014 to 2022. The overall bike usage steadily increases over the year. 
+                        We also observe the impact of Covid on bike usage, the Covid started in early 2020 and was followed by a city-wide lockdown period which displays in the graph that bike usage didn't grow as expected.
+                      </p> 
+                    </div>
+                    <div id = 'hourlySeries' style="margin-top: 1cm;" ></div> 
+                  </div>          
                 </div>
+                
               </div>
             </div>  
              <!-- Station Geographic Distritbution --> 
@@ -141,7 +148,7 @@
                   <h1 style="font-size: 50px;">Station Geographic Distritbution</h1>
                 </div>
                 <div class="col-md-6">
-                  <h3 style="text-align: center;">Station Distribution Map</h3>
+            
                   <svg></svg>
                   <script src='static/js/map.js' type='text/javascript'></script>
                   <div style="margin-left: 2cm; text-align: justify;"> 
@@ -151,7 +158,6 @@
                   </div>
                 </div>
                 <div class="col-md-6">
-                  <h3 style="text-align: center;"> Top10 Busiest Start Station </h3>
                   <div id = "stationBar"></div>
                   <div style="margin-right: 2cm;">
                     <p style="text-align: justify;">The bar chart above shows the top 10 busiest start stations among all stations, the rank is based on the number of trips started each day.
